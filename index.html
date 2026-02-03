@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>📚 AI Study Planner</h1>
+            <p>Plan your study schedule smartly and efficiently</p>
+        </header>
+
+        <!-- Input Form Section -->
+        <div class="input-section">
+            <h2>Enter Your Details</h2>
+            
+            <!-- Subject Input -->
+            <div class="input-group">
+                <label for="subjects">Subjects (comma separated):</label>
+                <input 
+                    type="text" 
+                    id="subjects" 
+                    placeholder="e.g., Math, Physics, Chemistry, Biology"
+                    autocomplete="off"
+                >
+                <small>Enter all subjects you need to study</small>
+            </div>
+
+            <!-- Hours Per Day Input -->
+            <div class="input-group">
+                <label for="hoursPerDay">Hours available per day:</label>
+                <input 
+                    type="number" 
+                    id="hoursPerDay" 
+                    placeholder="e.g., 6"
+                    min="0.5"
+                    step="0.5"
+                    autocomplete="off"
+                >
+                <small>How many hours can you study daily?</small>
+            </div>
+
+            <!-- Days Left Input -->
+            <div class="input-group">
+                <label for="daysLeft">Days until exam:</label>
+                <input 
+                    type="number" 
+                    id="daysLeft" 
+                    placeholder="e.g., 10"
+                    min="1"
+                    autocomplete="off"
+                >
+                <small>How many days do you have?</small>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="btn-generate">
+                Generate Study Plan
+            </button>
+
+            <!-- Error Message Display -->
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <!-- Results Section (Hidden Initially) -->
+        <div id="resultsSection" class="results-section hidden">
+            <!-- Summary Card -->
+            <div class="summary-card">
+                <h2>📊 Study Plan Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Subjects:</span>
+                        <span class="summary-value" id="totalSubjects">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Hours:</span>
+                        <span class="summary-value" id="totalHours">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Hours per Subject:</span>
+                        <span class="summary-value" id="hoursPerSubject">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Study Days:</span>
+                        <span class="summary-value" id="studyDays">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Schedule -->
+            <div class="schedule-container">
+                <h2>📅 Your Daily Study Schedule</h2>
+                <div id="scheduleOutput"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="printBtn" class="btn-secondary">
+                    🖨️ Print Schedule
+                </button>
+                <button id="resetBtn" class="btn-secondary">
+                    🔄 Create New Plan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with 💙 for students | No AI required, just smart logic</p>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
